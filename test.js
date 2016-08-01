@@ -7,8 +7,8 @@ var cases = [
     [['name', 'Al'], ['uva', 'passa'], ['banana', 'maçã']]
   ],
   [
-    `{value=23.1; 2: átila o huno}`,
-    [['value', 23.1], [2, 'átila o huno']]
+    `{val-ue=23.1; 2: átila o huno}`,
+    [['val-ue', 23.1], [2, 'átila o huno']]
   ],
   [
     `{'bánana'=23.12a    ; 23=1  ;}`,
@@ -17,15 +17,23 @@ var cases = [
   [
     `g=true,f:false,l:null;     null    :   false   ,true:23,false:'true' ;`,
     [['g', true], ['f', false], ['l', null], [null, false], [true, 23], [false, 'true']]
+  ],
+  [
+    `{"fruits"=['banana', 1235.2] ; other fruits:   [ 77,'crazy',"y!@#@#%¨&*" ,];}`,
+    [['fruits', ['banana', 1235.2]], ['other fruits', [77, 'crazy', 'y!@#@#%¨&*']]]
+  ],
+  [
+    `{"hello": "I am a normal JSON.", "can you parse me?": ["not", "always", 98, true]}`,
+    [['hello', 'I am a normal JSON.'], ['can you parse me?', ['not', 'always', 98, true]]]
   ]
 ]
 
 tape('basic', function (t) {
   t.plan(cases.length)
-  cases.forEach((c, i) => {
+  cases.forEach(c => {
     var str = c[0]
     var expected = c[1]
-    console.log(i, str)
+    console.log(str)
     t.deepEquals(parser.parse(str), expected)
   })
 })
