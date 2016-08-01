@@ -1,0 +1,17 @@
+Loose Structured Data
+=====================
+
+Parses strings like:
+
+    `name: Al, grape: "green", 'banana'='not at all'`
+    `{value=23.1; 2: átila the hun}`
+    `{'ninjá'=23.12a    ; 23=1  ;}`
+    `g=true,f:false,l:null;     null    :   false   ,true:23,false:'true' ;`
+
+To sane data. In fact it gives you arrays of key-values, like [['name', 'Al'], ['grape', 'green']], but you can easily turn those into Javascript objects, if you want.
+
+It supports numbers, booleans and null as keys.
+
+See test.js for a better figure of what exactly it does (nothing that it is not said here).
+
+We're on npm: https://www.npmjs.com/package/lsd-parser

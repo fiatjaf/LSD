@@ -1,0 +1,34 @@
+{
+  "name": "lsd-parser",
+  "version": "0.0.1",
+  "description": "Loose Structured Data parser.",
+  "main": "index.js",
+  "devDependencies": {
+    "pegjs": "^0.9.0",
+    "tape": "^4.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm run build && tape test.js",
+    "prepublish": "npm run build",
+    "build": "pegjs parser.pegjs index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiatjaf/LSD.git"
+  },
+  "keywords": [
+    "json",
+    "yaml",
+    "structured",
+    "data",
+    "data",
+    "format"
+  ],
+  "author": "Giovanni T. Parra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiatjaf/LSD/issues"
+  },
+  "homepage": "https://github.com/fiatjaf/LSD#readme"
+}
